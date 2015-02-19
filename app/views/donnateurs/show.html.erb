@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @donnateur.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @donnateur.prenom %>
+</p>
+
+<p>
+  <strong>Adresse 1:</strong>
+  <%= @donnateur.adresse_1 %>
+</p>
+
+<p>
+  <strong>Adresse 2:</strong>
+  <%= @donnateur.adresse_2 %>
+</p>
+
+<p>
+  <strong>Code postal:</strong>
+  <%= @donnateur.code_postal %>
+</p>
+
+<p>
+  <strong>Ville:</strong>
+  <%= @donnateur.ville %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @donnateur.telephone %>
+</p>
+
+<%= link_to 'Edit', edit_donnateur_path(@donnateur) %> |
+<%= link_to 'Back', donnateurs_path %>

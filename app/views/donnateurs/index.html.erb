@@ -1,0 +1,37 @@
+<h1>Listing donnateurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Adresse 1</th>
+      <th>Adresse 2</th>
+      <th>Code postal</th>
+      <th>Ville</th>
+      <th>Telephone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donnateurs.each do |donnateur| %>
+      <tr>
+        <td><%= donnateur.nom %></td>
+        <td><%= donnateur.prenom %></td>
+        <td><%= donnateur.adresse_1 %></td>
+        <td><%= donnateur.adresse_2 %></td>
+        <td><%= donnateur.code_postal %></td>
+        <td><%= donnateur.ville %></td>
+        <td><%= donnateur.telephone %></td>
+        <td><%= link_to 'Show', donnateur %></td>
+        <td><%= link_to 'Edit', edit_donnateur_path(donnateur) %></td>
+        <td><%= link_to 'Destroy', donnateur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donnateur', new_donnateur_path %>

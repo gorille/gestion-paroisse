@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @mort.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @mort.prenom %>
+</p>
+
+<p>
+  <strong>Date de deces:</strong>
+  <%= @mort.date_de_deces %>
+</p>
+
+<%= link_to 'Edit', edit_mort_path(@mort) %> |
+<%= link_to 'Back', morts_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Montant:</strong>
+  <%= @transaction.montant %>
+</p>
+
+<p>
+  <strong>Date effet:</strong>
+  <%= @transaction.date_effet %>
+</p>
+
+<p>
+  <strong>Numero de piece:</strong>
+  <%= @transaction.numero_de_piece %>
+</p>
+
+<p>
+  <strong>Commentaire:</strong>
+  <%= @transaction.commentaire %>
+</p>
+
+<p>
+  <strong>Mort:</strong>
+  <%= @transaction.mort %>
+</p>
+
+<p>
+  <strong>Donnateur:</strong>
+  <%= @transaction.donnateur %>
+</p>
+
+<p>
+  <strong>Paroisse:</strong>
+  <%= @transaction.paroisse %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

@@ -1,0 +1,17 @@
+<%= simple_form_for(@transaction) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :montant %>
+    <%= f.input :date_effet %>
+    <%= f.input :numero_de_piece %>
+    <%= f.input :commentaire %>
+    <%= f.association :mort %>
+    <%= f.association :donnateur %>
+    <%= f.association :paroisse %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: ['btn', 'btn-primary'] %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Listing morts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de deces</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @morts.each do |mort| %>
+      <tr>
+        <td><%= mort.nom %></td>
+        <td><%= mort.prenom %></td>
+        <td><%= mort.date_de_deces %></td>
+        <td><%= link_to 'Show', mort %></td>
+        <td><%= link_to 'Edit', edit_mort_path(mort) %></td>
+        <td><%= link_to 'Destroy', mort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mort', new_mort_path %>
