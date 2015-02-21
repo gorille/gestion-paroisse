@@ -1,6 +1,6 @@
-<h1>Listing transactions</h1>
+<h1>Listing des transactions</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Montant</th>
@@ -24,9 +24,9 @@
         <td><%= transaction.mort %></td>
         <td><%= transaction.donnateur %></td>
         <td><%= transaction.paroisse %></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Montrer', transaction %></td>
+        <td><%= link_to 'Editer', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Detruire', transaction, method: :delete, data: { confirm: 'Etes vous sur?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,3 @@
 
 <br>
 
-<%= link_to 'New Transaction', new_transaction_path %>

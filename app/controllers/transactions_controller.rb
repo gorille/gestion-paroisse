@@ -12,8 +12,13 @@ class TransactionsController < ApplicationController
   def show
   end
 
-  # GET /transactions/new
-  def new
+  # GET /transactions/messe
+  def messe
+    @transaction = Transaction.new
+  end
+  
+  # GET /transactions/don
+  def don
     @transaction = Transaction.new
   end
 

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :transactions
+  resources :transactions, except: :new do
+    collection do
+      get 'messe'
+      get 'don'
+    end
+  end
 
   resources :donnateurs
 

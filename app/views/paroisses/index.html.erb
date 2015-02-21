@@ -1,6 +1,6 @@
 <h1>Listing paroisses</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nom</th>
@@ -12,9 +12,9 @@
     <% @paroisses.each do |paroiss| %>
       <tr>
         <td><%= paroiss.nom %></td>
-        <td><%= link_to 'Show', paroiss %></td>
-        <td><%= link_to 'Edit', edit_paroiss_path(paroiss) %></td>
-        <td><%= link_to 'Destroy', paroiss, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Montrer', paroiss %></td>
+        <td><%= link_to 'Editer', edit_paroiss_path(paroiss) %></td>
+        <td><%= link_to 'Supprimer', paroiss, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Paroisse', new_paroiss_path %>
+<%= link_to 'Nouvelle paroisse', new_paroiss_path %>

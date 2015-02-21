@@ -1,4 +1,25 @@
 <h1>Bienvenue !</h1>
-<div class="row">
-<a href="<%= new_transaction_path %>" class="btn btn-success" role="button">Donner une messe</a>
+<div class='row'>
+	<div class='col-md-6'>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			<h3 class="panel-title">Donner une messe</h3>
+		  </div>
+		  <div class="panel-body">
+			Utilisez le bouton ci dessous pour plannifier une messe sur une paroisse<br/><br/>
+			<a href="<%= messe_transactions_path %>" class="btn btn-success" role="button">Donner une messe</a>
+		  </div>
+		</div>
+	</div>
+	<div class='col-md-6'>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			<h3 class="panel-title">Enregistrer un don</h3>
+		  </div>
+		  <div class="panel-body">
+			Utilisez le bouton ci dessous pour enregistrer un don d'une ou plusieurs messes<br/><br/>
+			<a href="<%= don_transactions_path %>" class="btn btn-success" role="button">Enregistrer un don</a>
+		  </div>
+		</div>
+	</div>
 </div>

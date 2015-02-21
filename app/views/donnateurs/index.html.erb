@@ -1,6 +1,6 @@
 <h1>Listing donnateurs</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Nom</th>
@@ -24,9 +24,9 @@
         <td><%= donnateur.code_postal %></td>
         <td><%= donnateur.ville %></td>
         <td><%= donnateur.telephone %></td>
-        <td><%= link_to 'Show', donnateur %></td>
-        <td><%= link_to 'Edit', edit_donnateur_path(donnateur) %></td>
-        <td><%= link_to 'Destroy', donnateur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Montrer', donnateur %></td>
+        <td><%= link_to 'Editer', edit_donnateur_path(donnateur) %></td>
+        <td><%= link_to 'Supprimer', donnateur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Donnateur', new_donnateur_path %>
+<%= link_to 'Nouveau Donnateur', new_donnateur_path %>

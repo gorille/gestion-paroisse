@@ -1,6 +1,6 @@
 <h1>Listing morts</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Nom</th>
@@ -16,9 +16,9 @@
         <td><%= mort.nom %></td>
         <td><%= mort.prenom %></td>
         <td><%= mort.date_de_deces %></td>
-        <td><%= link_to 'Show', mort %></td>
-        <td><%= link_to 'Edit', edit_mort_path(mort) %></td>
-        <td><%= link_to 'Destroy', mort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Montrer', mort %></td>
+        <td><%= link_to 'Editer', edit_mort_path(mort) %></td>
+        <td><%= link_to 'Supprimer', mort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Mort', new_mort_path %>
+<%= link_to 'Nouveau Mort', new_mort_path %>
