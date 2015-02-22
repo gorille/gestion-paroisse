@@ -9,7 +9,7 @@
       <th>Commentaire</th>
       <th>Mort</th>
       <th>Donnateur</th>
-      <th>Paroisse</th>
+      <th>Clocher</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +23,7 @@
         <td><%= transaction.commentaire %></td>
         <td><%= transaction.mort %></td>
         <td><%= transaction.donnateur %></td>
-        <td><%= transaction.paroisse %></td>
+        <td><%= transaction.clocher %></td>
         <td><%= link_to 'Montrer', transaction %></td>
         <td><%= link_to 'Editer', edit_transaction_path(transaction) %></td>
         <td><%= link_to 'Detruire', transaction, method: :delete, data: { confirm: 'Etes vous sur?' } %></td>

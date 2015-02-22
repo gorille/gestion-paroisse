@@ -1,2 +1,0 @@
-module ParoissesHelper
-end

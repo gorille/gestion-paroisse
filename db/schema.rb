@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219203119) do
+ActiveRecord::Schema.define(version: 20150222172535) do
+
+  create_table "clochers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nom"
+  end
 
   create_table "donnateurs", force: true do |t|
     t.string   "nom"
@@ -33,12 +39,6 @@ ActiveRecord::Schema.define(version: 20150219203119) do
     t.datetime "updated_at"
   end
 
-  create_table "paroisses", force: true do |t|
-    t.string   "nom"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "transactions", force: true do |t|
     t.integer  "montant"
     t.date     "date_effet"
@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20150219203119) do
     t.text     "commentaire"
     t.integer  "mort_id"
     t.integer  "donnateur_id"
-    t.integer  "paroisse_id"
+    t.integer  "clocher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "transactions", ["clocher_id"], name: "index_transactions_on_clocher_id"
   add_index "transactions", ["donnateur_id"], name: "index_transactions_on_donnateur_id"
   add_index "transactions", ["mort_id"], name: "index_transactions_on_mort_id"
-  add_index "transactions", ["paroisse_id"], name: "index_transactions_on_paroisse_id"
 
 end

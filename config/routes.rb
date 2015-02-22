@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clochers
+
   resources :transactions, except: :new do
     collection do
       get 'messe'
@@ -9,8 +11,6 @@ Rails.application.routes.draw do
   resources :donnateurs
 
   resources :morts
-
-  resources :paroisses
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
