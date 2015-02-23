@@ -1,0 +1,30 @@
+<h1>Planning sur un mois</h1>
+<% for clocher in @clochers %>
+<div class='row'>
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+		<h3 class="panel-title"><%= clocher.nom%></h3>
+	  </div>
+	  <div class="panel-body">
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>Date de la messe</th>
+					<th>Personne d&eacute;c&eacute;d&eacute;e</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for messe in clocher.transactions %>
+					<tr>
+						<td><%= messe.date_effet%></td>
+						<td><%= messe.mort.to_s %></td>
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	  </div>
+	</div>
+</div>
+<%end%>
+<br/>
+<%= link_to 'Retour', clochers_path %>

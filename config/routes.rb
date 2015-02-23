@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :clochers
-
+  resources :clochers do
+    collection do
+      get 'planning'
+    end
+  end
   resources :transactions, except: :new do
     collection do
       get 'messe'

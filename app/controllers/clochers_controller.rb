@@ -6,6 +6,13 @@ class ClochersController < ApplicationController
   def index
     @clochers = Clocher.all
   end
+  
+  # GET /clochers/planning
+  # GET /clochers/planning.json
+  def planning
+    @clochers = Clocher.includes(transactions: [:mort]).references(:transactions, :morts)
+  end
+
 
   # GET /clochers/1
   # GET /clochers/1.json
