@@ -2,11 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  	<%# TODO : label a modifier en 'personne decedee'%>	
+    <%= f.association :mort %>
+    <%= f.association :donnateur %>
+	<%# TODO : label a modifier en 'Nombre de messes'%>
     <%= f.input :montant %>
     <%= f.input :numero_de_piece %>
     <%= f.input :commentaire %>
-    <%= f.association :mort %>
-    <%= f.association :donnateur %>
   </div>
 
   <div class="form-actions">

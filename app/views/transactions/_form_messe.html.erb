@@ -3,11 +3,12 @@
 
   <div class="form-inputs">
     <%= f.hidden_field :montant,:value => -1 %>
-    <%= f.input :commentaire %>
+	<%# TODO : label a modifier en 'personne decedee'%>
     <%= f.association :mort %>
     <%= f.association :donnateur %>
     <%= f.association :clocher %>
 	<%= f.input :date_effet %>
+    <%= f.input :commentaire %>
   </div>
 
   <div class="form-actions">
