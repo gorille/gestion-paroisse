@@ -17,6 +17,11 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
   end
   
+  # GET /transactions/don_messe
+  def don_messe
+    @transaction = Transaction.new
+  end
+  
   # GET /transactions/don
   def don
     @transaction = Transaction.new
@@ -29,14 +34,17 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+    my_params=transaction_params
+    
+    from=my_params.delete('from')
+    @transaction = Transaction.new(my_params)
 
     respond_to do |format|
       if @transaction.save
         format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
       else
-        format.html { render :new }
+        format.html { render from.to_sym }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
@@ -74,6 +82,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:montant, :date_effet, :numero_de_piece, :commentaire, :mort_id, :donnateur_id, :clocher_id)
+      params.require(:transaction).permit(:montant, :date_effet, :numero_de_piece, :commentaire, :mort_id, :donnateur_id, :clocher_id, :from)
     end
 end

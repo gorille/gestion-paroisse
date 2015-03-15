@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.hidden_field :montant,:value => -1 %>
-	<%# TODO : label a modifier en 'personne decedee'%>
+	<%= f.hidden_field :from,:value => 'messe' %>
     <%= f.association :mort %>
     <%= f.association :donnateur %>
     <%= f.association :clocher %>

@@ -4,6 +4,7 @@ class MortsController < ApplicationController
   # GET /morts
   # GET /morts.json
   def index
+    # @morts = Mort.all_with_total
     @morts = Mort.all
   end
 

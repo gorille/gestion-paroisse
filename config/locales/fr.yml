@@ -7,6 +7,13 @@
 # Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
 
 fr:
+  activerecord:
+    models:
+      mort: "Personne décédée"
+    attributes:
+      transaction:
+        mort: "Personne décédée"
+        montant: 'Nombre de messes'
   date:
     abbr_day_names:
       - dim

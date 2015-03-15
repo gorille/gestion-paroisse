@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'messe'
       get 'don'
+      get 'don_messe'
     end
   end
 
