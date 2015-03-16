@@ -1,0 +1,18 @@
+<%= simple_form_for(@transaction) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :montant,:value => 0 %>
+    <%= f.hidden_field :from,:value => 'don_messe' %>
+    <%= f.association :mort %>
+    <%= f.association :donnateur %>
+    <%= f.association :clocher %>
+	<%= f.input :date_effet %>
+	<%= f.input :numero_de_piece %>
+    <%= f.input :commentaire %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: ['btn', 'btn-primary'], :value => 'Plannifier la messe' %>
+  </div>
+<% end %>
