@@ -6,6 +6,7 @@
       <th>Nom</th>
       <th>Prenom</th>
       <th>Date de deces</th>
+      <th>Solde</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,8 @@
         <td><%= mort.nom %></td>
         <td><%= mort.prenom %></td>
         <td><%= mort.date_de_deces %></td>
+        <td><span class="badge"><%= mort.solde %></span></td>
+		<td><%= link_to 'Historique', historique_mort_path(mort) %>
         <td><%= link_to 'Montrer', mort %></td>
         <td><%= link_to 'Editer', edit_mort_path(mort) %></td>
         <td><%= link_to 'Supprimer', mort, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,7 +17,7 @@
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.montant %></td>
+        <td><span class="badge"><%= transaction.montant %></span></td>
         <td><%= transaction.date_effet %></td>
         <td><%= transaction.numero_de_piece %></td>
         <td><%= transaction.commentaire %></td>

@@ -1,11 +1,11 @@
 class MortsController < ApplicationController
-  before_action :set_mort, only: [:show, :edit, :update, :destroy]
+  before_action :set_mort, only: [:show, :edit, :update, :destroy, :historique]
 
   # GET /morts
   # GET /morts.json
   def index
-    # @morts = Mort.all_with_total
-    @morts = Mort.all
+    @morts = Mort.all_with_total
+    # render plain: @morts.to_json
   end
 
   # GET /morts/1
@@ -22,6 +22,12 @@ class MortsController < ApplicationController
   def edit
   end
 
+  # GET /morts/1/historique
+  def historique
+    @transactions=@mort.transactions
+    render 'transactions/index.html'
+  end
+  
   # POST /morts
   # POST /morts.json
   def create
