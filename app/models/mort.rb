@@ -1,5 +1,6 @@
 class Mort < ActiveRecord::Base
   has_many :transactions
+  belongs_to :clocher
   before_save :cap
   
   def to_s
@@ -8,8 +9,9 @@ class Mort < ActiveRecord::Base
   
   def self.all_with_total
     joins('LEFT OUTER JOIN transactions on morts.id=transactions.mort_id')
-      .select('morts.id, nom, prenom, date_de_deces, sum(transactions.montant) as solde')
-      .group('morts.id', :nom, :prenom, :date_de_deces)
+      .joins('LEFT OUTER JOIN clochers on morts.clocher_id=clochers.id')
+      .select('morts.id, clochers.nom as nom_clocher, morts.nom, prenom, date_de_deces, sum(transactions.montant) as solde')
+      .group('morts.id', :nom_clocher, 'clochers.nom','morts.nom', :prenom, :date_de_deces)
       .order(date_de_deces: :desc)
   end
   

@@ -3,6 +3,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>Clocher</th>
       <th>Nom</th>
       <th>Prenom</th>
       <th>Date de deces</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @morts.each do |mort| %>
       <tr>
+        <td><%= mort.nom_clocher %></td>
         <td><%= mort.nom %></td>
         <td><%= mort.prenom %></td>
         <td><%= mort.date_de_deces %></td>

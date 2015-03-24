@@ -76,6 +76,6 @@ class MortsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mort_params
-      params.require(:mort).permit(:nom, :prenom, :date_de_deces)
+      params.require(:mort).permit(:nom, :prenom, :date_de_deces, :clocher_id)
     end
 end

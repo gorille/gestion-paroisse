@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222172535) do
+ActiveRecord::Schema.define(version: 20150324191858) do
 
   create_table "clochers", force: true do |t|
     t.datetime "created_at"
@@ -37,7 +37,10 @@ ActiveRecord::Schema.define(version: 20150222172535) do
     t.date     "date_de_deces"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "clocher_id"
   end
+
+  add_index "morts", ["clocher_id"], name: "index_morts_on_clocher_id"
 
   create_table "transactions", force: true do |t|
     t.integer  "montant"
