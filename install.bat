@@ -8,5 +8,6 @@ call rake db:create
 
 :update
 cd %userprofile%\desktop\gestion-paroisse
+git pull
 call rake db:migrate
 call bundle install
