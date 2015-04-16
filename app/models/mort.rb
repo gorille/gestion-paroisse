@@ -12,7 +12,7 @@ class Mort < ActiveRecord::Base
       .joins('LEFT OUTER JOIN clochers on morts.clocher_id=clochers.id')
       .select('morts.id, clochers.nom as nom_clocher, morts.nom, prenom, date_de_deces, sum(transactions.montant) as solde')
       .group('morts.id', :nom_clocher, 'clochers.nom','morts.nom', :prenom, :date_de_deces)
-      .order(date_de_deces: :desc)
+      .order('nom'=> :asc)
   end
   
   private

@@ -18,7 +18,7 @@
         <td><%= mort.nom_clocher %></td>
         <td><%= mort.nom %></td>
         <td><%= mort.prenom %></td>
-        <td><%= mort.date_de_deces %></td>
+        <td><%= mort.date_de_deces.nil? ? '-' : l(mort.date_de_deces) %></td>
         <td><span class="badge"><%= mort.solde %></span></td>
 		<td><%= link_to 'Historique', historique_mort_path(mort) %>
         <td><%= link_to 'Montrer', mort %></td>

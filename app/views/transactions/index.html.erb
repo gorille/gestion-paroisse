@@ -18,7 +18,7 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td><span class="badge"><%= transaction.montant %></span></td>
-        <td><%= transaction.date_effet %></td>
+        <td><%= transaction.date_effet.nil? ? '-' : l(transaction.date_effet) %></td>
         <td><%= transaction.numero_de_piece %></td>
         <td><%= transaction.commentaire %></td>
         <td><%= transaction.mort %></td>

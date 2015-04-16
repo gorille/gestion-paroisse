@@ -4,7 +4,7 @@ class DonnateursController < ApplicationController
   # GET /donnateurs
   # GET /donnateurs.json
   def index
-    @donnateurs = Donnateur.all
+    @donnateurs = Donnateur.order(:nom).all
   end
 
   # GET /donnateurs/1

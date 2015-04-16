@@ -16,7 +16,7 @@
 			<tbody>
 				<% for messe in clocher.transactions %>
 					<tr>
-						<td><%= messe.date_effet%></td>
+						<td><%= messe.date_effet.nil? ? '-' : l(messe.date_effet)%></td>
 						<td><%= messe.mort.to_s %></td>
 					</tr>
 				<%end%>
