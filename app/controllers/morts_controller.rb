@@ -5,7 +5,7 @@ class MortsController < ApplicationController
   # GET /morts.json
   def index
     @morts = Mort.all_with_total
-    # render plain: @morts.to_json
+    # render plain: Mort.top5_oldest
   end
 
   # GET /morts/1

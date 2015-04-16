@@ -47,3 +47,35 @@
 		</div>
 	</div>
 </div>
+<div class='row'>
+	<div class='col-md-12'>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			<h3 class="panel-title">TOP 5 des soldes avec transactions de plus de 2 mois</h3>
+		  </div>
+		  <div class="panel-body">
+			<table class='table'>
+			  <thead>
+				<tr>
+				  <th>Nom</th>
+				  <th>Prenom</th>
+				  <th>Solde</th>
+				  <th>Derniere Transaction</th>
+				</tr>
+			  </thead>
+
+			  <tbody>
+				<% @top5.each do |mort| %>
+				  <tr>
+					<td><%= mort.nom %></td>
+					<td><%= mort.prenom %></td>
+					<td><span class="badge"><%= mort.solde %></span></td>
+					<td><%= mort.derniere_transaction %></td>
+				  </tr>
+				<% end %>
+			  </tbody>
+			</table>
+		  </div>
+		</div>
+	</div>
+</div>
