@@ -18,7 +18,7 @@
         <td><%= mort.prenom %></td>
         <td><%= mort.date_de_deces.nil? ? '-' : l(mort.date_de_deces) %></td>
         <td><span class="badge"><%= mort.solde %></span></td>
-        <td><%= mort.derniere_transaction %></td>
+        <td><%= mort.derniere_transaction.nil? ? '-' : l(mort.derniere_transaction)%></td>
       </tr>
     <% end %>
   </tbody>
