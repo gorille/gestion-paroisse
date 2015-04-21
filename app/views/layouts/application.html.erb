@@ -23,7 +23,12 @@
 	  <ul class="nav navbar-nav">
 	    <li><a href="<%=root_path%>"><span class='glyphicon glyphicon-home'/></a></li>
 		<li <% if controller_name == 'clocher'%> class="active"<%end%>><a href="<%=clochers_path%>">Liste des clochers</a></li>
-		<li <% if controller_name == 'morts'%> class="active"<%end%>><a href="<%=morts_path%>">Liste des personnes décédées</a></li>
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" <% if controller_name == 'morts'%> class="active"<%end%>>Personnes décédées <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="<%=morts_path%>">Liste des personnes décédées</a></li>
+            <li><a href="<%=top20_morts_path%>">Liste des personnes avec solde à plannifier</a></li>
+		  </ul>
 		<li <% if controller_name == 'donnateurs'%> class="active"<%end%>><a href="<%=donnateurs_path%>">Liste des donnateurs</a></li>
 	  </ul>
 	</div><!--/.nav-collapse -->

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     member do
       get 'historique'
     end
+    collection do 
+      get 'top20'
+    end
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

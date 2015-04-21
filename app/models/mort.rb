@@ -15,13 +15,13 @@ class Mort < ActiveRecord::Base
       .order('nom'=> :asc)
   end
   
-  def self.top5_oldest
+  def self.top_oldest(nb)
     joins('LEFT OUTER JOIN transactions on morts.id=transactions.mort_id')
       .select('morts.id, morts.nom, prenom, date_de_deces, sum(transactions.montant) as solde, max(transactions.date_effet) as derniere_transaction')
       .group('morts.id', 'morts.nom', :prenom, :date_de_deces)
       .having("max(transactions.date_effet)< ?",  Time.now - 2.month)
       .order('sum(transactions.montant) desc' )
-      .first(5)
+      .first(nb)
   end
   
   private

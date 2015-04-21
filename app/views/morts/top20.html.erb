@@ -1,0 +1,28 @@
+<h1>Liste des personnes d&eacute;c&eacute;d&eacute;es</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de deces</th>
+      <th>Solde</th>
+      <th>Dernière transaction</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @morts.each do |mort| %>
+      <tr>
+        <td><%= mort.nom %></td>
+        <td><%= mort.prenom %></td>
+        <td><%= mort.date_de_deces.nil? ? '-' : l(mort.date_de_deces) %></td>
+        <td><span class="badge"><%= mort.solde %></span></td>
+        <td><%= mort.derniere_transaction %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<a href="<%= messe_transactions_path %>" class="btn btn-success" role="button">Décompter une messe</a>

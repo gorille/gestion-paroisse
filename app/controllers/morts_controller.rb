@@ -28,6 +28,11 @@ class MortsController < ApplicationController
     render 'transactions/index.html'
   end
   
+  # GET /morts/top20
+  def top20
+    @morts=Mort.top_oldest(20)
+  end
+  
   # POST /morts
   # POST /morts.json
   def create
