@@ -51,7 +51,7 @@
 	<div class='col-md-12'>
 		<div class="panel panel-primary">
 		  <div class="panel-heading">
-			<h3 class="panel-title">TOP 10 des soldes avec transactions de plus de 2 mois</h3>
+			<h3 class="panel-title">TOP 10 des soldes avec planification libre</h3>
 		  </div>
 		  <div class="panel-body">
 			<table class='table'>
@@ -60,6 +60,7 @@
 				  <th>Nom</th>
 				  <th>Prenom</th>
 				  <th>Solde</th>
+				  <th>Planification Libre</th>
 				  <th>Derniere Transaction</th>
 				</tr>
 			  </thead>
@@ -70,7 +71,8 @@
 					<td><%= mort.nom %></td>
 					<td><%= mort.prenom %></td>
 					<td><span class="badge"><%= mort.solde %></span></td>
-					<td><%= mort.derniere_transaction.nil? ? '-' : l(mort.derniere_transaction) %></td>
+					<td><span class="glyphicon glyphicon-<%= mort.planification_libre ? "ok" : "remove"  %>"> </span></td>
+					<td><%= mort.derniere_transaction.nil? ? '-' : mort.derniere_transaction %></td>
 				  </tr>
 				<% end %>
 			  </tbody>
