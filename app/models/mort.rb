@@ -10,15 +10,15 @@ class Mort < ActiveRecord::Base
   def self.all_with_total
     joins('LEFT OUTER JOIN transactions on morts.id=transactions.mort_id')
       .joins('LEFT OUTER JOIN clochers on morts.clocher_id=clochers.id')
-      .select('morts.id, clochers.nom as nom_clocher, morts.nom, prenom, date_de_deces, sum(transactions.montant) as solde, planification_libre')
-      .group('morts.id', :nom_clocher, 'clochers.nom','morts.nom', :prenom, :date_de_deces, :planification_libre)
+      .select('morts.id, clochers.nom as nom_clocher, morts.nom, prenom, prenom2, date_de_deces, sum(transactions.montant) as solde, planification_libre')
+      .group('morts.id', :nom_clocher, 'clochers.nom','morts.nom', :prenom, :prenom2, :date_de_deces, :planification_libre)
       .order('nom'=> :asc)
   end
   
   def self.top_oldest(nb)
     joins('LEFT OUTER JOIN transactions on morts.id=transactions.mort_id')
-      .select('morts.id, morts.nom, prenom, date_de_deces, sum(transactions.montant) as solde, max(transactions.date_effet) as derniere_transaction, planification_libre')
-      .group('morts.id', 'morts.nom', :prenom, :date_de_deces, :planification_libre)
+      .select('morts.id, morts.nom, prenom, prenom2, date_de_deces, sum(transactions.montant) as solde, max(transactions.date_effet) as derniere_transaction, planification_libre')
+      .group('morts.id', 'morts.nom', :prenom, :prenom2, :date_de_deces, :planification_libre)
       .having("max(transactions.date_effet)< ?",  Time.now - 2.month)
       .order('sum(transactions.montant) desc' )
       .first(nb)
@@ -38,5 +38,6 @@ class Mort < ActiveRecord::Base
   def cap
     self.nom=self.nom.upcase
     self.prenom=self.prenom.capitalize
+    self.prenom2=self.prenom2.capitalize
   end
 end

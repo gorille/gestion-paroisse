@@ -11,6 +11,7 @@
 				<tr>
 					<th>Date de la messe</th>
 					<th>Personne d&eacute;c&eacute;d&eacute;e</th>
+					<th>Comentaire/intention diverses</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +19,7 @@
 					<tr>
 						<td><%= messe.date_effet.nil? ? '-' : l(messe.date_effet)%></td>
 						<td><%= messe.mort.to_s %></td>
+						<td><%= messe.commentaire %></td>
 					</tr>
 				<%end%>
 			</tbody>

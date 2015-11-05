@@ -10,7 +10,7 @@ class ClochersController < ApplicationController
   # GET /clochers/planning
   # GET /clochers/planning.json
   def planning
-    @clochers = Clocher.includes(transactions: [:mort]).references(:transactions, :morts)
+    @clochers = Clocher.includes(transactions: [:mort]).references(:transactions, :morts).order("clochers.nom, date_effet ASC")
   end
 
 

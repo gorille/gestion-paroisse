@@ -6,6 +6,7 @@
       <th>Clocher</th>
       <th>Nom</th>
       <th>Prenom</th>
+      <th>Prenom2</th>
       <th>Date de deces</th>
       <th>Solde</th>
       <th>Planification libre</th>
@@ -19,6 +20,7 @@
         <td><%= mort.nom_clocher %></td>
         <td><%= mort.nom %></td>
         <td><%= mort.prenom %></td>
+        <td><%= mort.prenom2 %></td>
         <td><%= mort.date_de_deces.nil? ? '-' : l(mort.date_de_deces) %></td>
         <td><span class="badge"><%= mort.solde %></span></td>
         <td><span class="glyphicon glyphicon-<%= mort.planification_libre ? "ok" : "remove"  %>"> </span></td>
