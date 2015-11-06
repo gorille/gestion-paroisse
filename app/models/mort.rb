@@ -4,7 +4,7 @@ class Mort < ActiveRecord::Base
   before_save :cap
   
   def to_s
-    "#{self.nom} #{self.prenom}"
+    "#{self.nom} #{self.prenom} #{self.prenom2}"
   end
   
   def self.all_with_total
@@ -12,7 +12,7 @@ class Mort < ActiveRecord::Base
       .joins('LEFT OUTER JOIN clochers on morts.clocher_id=clochers.id')
       .select('morts.id, clochers.nom as nom_clocher, morts.nom, prenom, prenom2, date_de_deces, sum(transactions.montant) as solde, planification_libre')
       .group('morts.id', :nom_clocher, 'clochers.nom','morts.nom', :prenom, :prenom2, :date_de_deces, :planification_libre)
-      .order('nom'=> :asc)
+      .order('clochers.nom ASC',  'nom'=> :asc)
   end
   
   def self.top_oldest(nb)

@@ -72,7 +72,7 @@
 					<td><%= mort.prenom %></td>
 					<td><span class="badge"><%= mort.solde %></span></td>
 					<td><span class="glyphicon glyphicon-<%= mort.planification_libre ? "ok" : "remove"  %>"> </span></td>
-					<td><%= mort.derniere_transaction.nil? ? '-' : l(mort.derniere_transaction) %></td>
+					<td><%= mort.derniere_transaction.nil? ? '-' : l((mort.derniere_transaction.is_a? String) ? Date.parse(mort.derniere_transaction) : mort.derniere_transaction) %></td>
 				  </tr>
 				<% end %>
 			  </tbody>

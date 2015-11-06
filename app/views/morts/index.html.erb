@@ -1,5 +1,20 @@
 <h1>Liste des personnes d&eacute;c&eacute;d&eacute;es</h1>
 
+<a href="<%= new_mort_path %>" class="btn btn-success" role="button">Nouvelle personne  décédée</a><BR>
+<% clocher="" %>
+<% @morts.each do |mort| %>
+<% if mort.nom_clocher != clocher %>
+<% if clocher!="" %><%# closes previous table %>
+  </tbody>
+</table>
+</div>
+</div>
+<%end%>
+<div class="panel panel-primary">
+		  <div class="panel-heading">
+			<h3 class="panel-title"><%= mort.nom_clocher%></h3>
+		  </div>
+		  <div class="panel-body">
 <table class='table'>
   <thead>
     <tr>
@@ -15,7 +30,8 @@
   </thead>
 
   <tbody>
-    <% @morts.each do |mort| %>
+<%end%>
+<% clocher= mort.nom_clocher %>
       <tr>
         <td><%= mort.nom_clocher %></td>
         <td><%= mort.nom %></td>
@@ -33,7 +49,9 @@
   </tbody>
 </table>
 
+</div>
+</div>
 <br>
 
 
-<a href="<%= new_mort_path %>" class="btn btn-success" role="button">'Nouvelle personne  décédée</a>
+<a href="<%= new_mort_path %>" class="btn btn-success" role="button">Nouvelle personne  décédée</a>
