@@ -1,4 +1,4 @@
-class CreateClochers < ActiveRecord::Migration
+class CreateClochers < ActiveRecord::Migration[4.2]
   def change
     create_table :clochers do |t|
 

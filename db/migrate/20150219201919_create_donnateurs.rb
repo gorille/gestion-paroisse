@@ -1,4 +1,4 @@
-class CreateDonnateurs < ActiveRecord::Migration
+class CreateDonnateurs < ActiveRecord::Migration[4.2]
   def change
     create_table :donnateurs do |t|
       t.string :nom
