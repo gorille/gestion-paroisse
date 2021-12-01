@@ -1,4 +1,4 @@
-class CreateMorts < ActiveRecord::Migration
+class CreateMorts < ActiveRecord::Migration[4.2]
   def change
     create_table :morts do |t|
       t.string :nom

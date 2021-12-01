@@ -1,4 +1,4 @@
-class Mort < ActiveRecord::Base
+class Mort < ApplicationRecord
   has_many :transactions
   belongs_to :clocher
   before_save :cap

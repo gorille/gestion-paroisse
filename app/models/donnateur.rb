@@ -1,4 +1,4 @@
-class Donnateur < ActiveRecord::Base
+class Donnateur < ApplicationRecord
   before_save :cap
   
   def to_s
